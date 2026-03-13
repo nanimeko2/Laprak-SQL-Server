@@ -19,9 +19,16 @@ insert into tb_kota values
 (100,'bandung',1),
 (101,'bogor',1),
 (102,'semarang',2),
-(103,'surabaya',4),
-(104,'bali',3);
+(103,'surabaya',4);
 
+delete from tb_kota where id_kota = 104
+
+-- BANYAK VERSI
+select * from tb_kota K
+inner join tb_provinsi P on k.id_provinsi = P.id_provinsi;
+
+select tb_kota.nama_kota, tb_provinsi.nama_provinsi
+from tb_kota inner join tb_provinsi on tb_kota.id_provinsi = tb_provinsi.id_provinsi
 
 select K.nama_kota, P.nama_provinsi
 from tb_kota K
