@@ -32,7 +32,7 @@ select * from tb_kota
 select * from tb_provinsi P left join tb_kota K ON P.id_provinsi = K.id_provinsi
 select * from tb_provinsi P right join tb_kota K ON P.id_provinsi = K.id_provinsi
 
-
+-- ALTER AUTHORIZATION ON DATABASE::domisili TO sa;
 
 
 -- delete from tb_kota where id_kota
