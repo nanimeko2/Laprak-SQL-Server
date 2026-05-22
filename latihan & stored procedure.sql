@@ -25,6 +25,20 @@ nama varchar(15)
 insert into pesanan values ('baso'), ('mie ayam');
 
 
+-- insert data
+create procedure ins_dua2
+@nama varchar(15),
+@email varchar(15),
+@pesanan varchar(15)
+as
+begin
+insert into pelanggan (nama, email) values (@nama, @email);
+insert into pesanan (nama) values (@pesanan);
+end
+
+-- panggil procedure yang telah dibuat
+exec ins_dua2'citra','indo@gmail.com', 'air putih'
+
 -- delete
 create procedure del_pelanggan
 @nama varchar(15)
@@ -49,14 +63,15 @@ end
 exec up_pelanggan 'suki', 'suki@gmail.com'
 
 -- store procedure tanpa parameter
-create procedure pelanggan_cek
+create procedure pelanggan_cek2
 as
 begin
 select * from pelanggan
+select * from pesanan
 end
 
 -- panggil procedure yang telah dibuat
-exec pelanggan_cek;
+exec pelanggan_cek2;
 
 
 -- store procedure tanpa parameter
